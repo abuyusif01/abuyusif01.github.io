@@ -21,12 +21,9 @@ timezone: Asia/Shanghai
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy                          # the main title
+title: Abuyusif01                          # the main title
 
-tagline: A text-focused Jekyll theme   # it will display as the sub-title
-
-description: >-                        # used by seo meta and the atom feed
-  A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
+tagline: I love tinkering around with computers, definitely not a hacker. # it will display as the sub-title
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
 url: 'https://abuyusif01.github.io'
@@ -83,7 +80,7 @@ theme_mode:   # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: assets/img/hero.png
 
 # boolean type, the global switch for ToC in posts.
 toc: true
