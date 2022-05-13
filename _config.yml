@@ -11,6 +11,8 @@
 
 #plugins: [jekyll-paginate]
 baseurl: ''
+plugins:
+  - jekyll-remote-theme
 remote_theme: 'jekyll-theme-chirpy@v5.1'
 
 # The language of the webpage › http://www.lingoes.net/en/translator/langcode.htm
