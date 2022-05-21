@@ -110,7 +110,7 @@ User www-data may run the following commands on 005c9764143d:
 Well, thats kinda ez priv esc.
 `sudo /usr/bin/env /bin/bash -p` Now we root <br>`flag3: can be found /root/ THM{D1ff3r3nt_3nv1ronments_*******}`
 
-what... so where tf is flag4?. 
+what... so where tf is flag4?.
 
 ### escaping container
 So i figure it out, we're inside a container. Now our job is to somehow runaway from here.
