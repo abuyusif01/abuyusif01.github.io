@@ -52,7 +52,6 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 Apparently the username and password fields are vulnerable to sql-injection. At first i try the following payload `'or 1=1--'` and logged in as smokey (Nice)
 Now i try using sqlmap to dump the database and see what is exactly in there.
 
-
 ## Initial Foothold
 
 ```bash
@@ -70,10 +69,9 @@ Table: users
 ```
 Luckily we go smokey password then use it to login ssh.
 
-
 # User.txt
 
-So now we smokey. But holup, this user doesn't have the user.txt, urgh c'mon.. whatever
+So now we smokey. But holup, this user cant read user.txt, urgh c'mon.. whatever
 lets find our way to hazel
 
 ```bash
@@ -84,18 +82,16 @@ sudo -l
 Running linpeas shows nothing. LIKE WHAT AM I MISSING?.. Wait i remember there's a hint
 for this flag. 'Weak password', Oh really?
 I got stuck here for like 20mins trying literally every single thing i could possibly
-imagine... Then i decided to ask for help.
+think of.. Then i decided to ask for help.
 Someone send me this link `https://www.youtube.com/watch?v=sQgd6MccwZc` as hint. and guess
 what? it works lmao,.
 
 ## creds
 
-`hazel:hazel` <br>
-Yeah am stupid right?
+`hazel:hazel` Yeah am stupid right?
 
 ## Flag
-
-`THM{G0Od_OLd_*****************_p@sSw0rd$}`
+`THM{G0Od_*****************_p@sSw0rd$}`
 
 
 # Root.txt
@@ -108,11 +104,11 @@ User hazel may run the following commands on biblioteca:
     (root) SETENV: NOPASSWD: /usr/bin/python3 /home/hazel/hasher.py
 
 ```
-SETENV basically us to set environmental variables. So what can we do with exactly?
+SETENV basically allow us to set environmental variables. So what can we do with this exactly?
 We have to look at the hasher.py file to understand where we can hijack the lib/module
 
 ```python
-import hashlib
+import hashlib # we gonna make this import our malicous file :D
 
 def hashing(passw):
 
@@ -130,8 +126,8 @@ def hashing(passw):
 .
 ............
 ```
-As you can see, we import hashlib at the start of the programming, So what we can is
-basically create our own fake hashlib lib and set the path to point it, then we execute
+As you can see, we import hashlib at the start of the programming, So what we can do is
+basically create our own malicious hashlib and set the path to point it, then we can execute
 any python command as root, clever right?
 
 
@@ -155,10 +151,9 @@ sudo PYTHONPATH=/dev/shm /usr/bin/python3 /home/hazel/hasher.py
 ```
 And voila, we root it.
 
-
 ## Flag
-
 `THM{PytH0n_...........InG}`
-
-
+<br>
+<br>
+<br>
 Thanks for reading, I hope this helps.
