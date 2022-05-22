@@ -1,7 +1,7 @@
 ---
 title: biblioteca TryHackMe -- Writeup
 date: 2022-05-21
-categories: [TryHackme, Medium]
+categories: [TryHackMe, Medium]
 tags: [sqli, mis-config, lib-hijacking]
 ---
 
